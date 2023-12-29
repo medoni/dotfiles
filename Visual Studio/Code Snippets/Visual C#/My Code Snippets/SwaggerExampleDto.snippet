@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Swagger Example Dto</Title>
+            <Shortcut>swagex</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[public class $classname$Example : IExamplesProvider<$classname$>
+{
+    public $classname$ GetExamples()
+    => new $classname$();
+}$end$]]>
+            </Code>
+            <Declarations>
+                <Literal default="true" Editable="true">
+                    <ID>classname</ID>
+                    <ToolTip>Class name</ToolTip>
+                    <Default>ClassName</Default>
+                </Literal>
+            </Declarations>
+            <Imports>
+                <Import>
+                    <Namespace>Swashbuckle.AspNetCore.Filters</Namespace>
+                </Import>
+            </Imports>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

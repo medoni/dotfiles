@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>NUnit - Fixture</Title>
+			<Shortcut>nfixture</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[[TestFixture]
+    [Category(TestCategories.Unit)]
+    public class $SUTName$Tests
+    {
+        private $SUTName$ Sut { get; set; }
+
+        [SetUp]
+        public void SetUp()
+        {
+            Sut = new $SUTName$();
+        }
+
+        [Test]
+        public void $TestName$()
+        {
+            // arrange
+
+            // act
+
+            // assert
+            Assert.Fail();
+        }
+    }]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>SUTName</ID>
+					<ToolTip>Name of the subject under test</ToolTip>
+					<Default>Foo</Default>
+				</Literal>
+				<Literal>
+					<ID>TestName</ID>
+					<ToolTip>Name of the test</ToolTip>
+					<Default>Test</Default>
+				</Literal>
+			</Declarations>
+			<Imports>
+				<Import>
+					<Namespace>NUnit.Framework</Namespace>
+				</Import>
+			</Imports>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

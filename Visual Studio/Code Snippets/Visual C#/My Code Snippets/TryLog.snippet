@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Try log</Title>
+			<Shortcut>trylog</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp" Kind="method body"><![CDATA[try
+            {
+                _logger.LogDebug("$beginlog$");
+
+                $selected$
+
+                _logger.LogDebug("$endlog$");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "$catchlog$");
+                throw;
+            }$end$]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>selected</ID>
+					<ToolTip>Code block</ToolTip>
+					<Default>// code that may fail</Default>
+				</Literal>
+                <Literal>
+                    <ID>beginlog</ID>
+                    <Default>Start ...</Default>
+                </Literal>
+                <Literal>
+                    <ID>endlog</ID>
+                    <Default>Successful ...</Default>
+                </Literal>
+                <Literal>
+                    <ID>catchlog</ID>
+                    <Default>Error ...</Default>
+                </Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
